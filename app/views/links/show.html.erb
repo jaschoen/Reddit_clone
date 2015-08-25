@@ -12,3 +12,16 @@
     <%= link_to 'Destroy', @link, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
   </div>
 <% end %>
+
+<div class="btn-group pull-right">
+  <%= link_to upvote_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
+    <span class="glyphicon glyphicon-menu-up">
+      
+      <%= @link.get_upvotes.size %>
+  <% end %>
+ 
+  <%= link_to downvote_link_path(@link), method: :put, class: "btn btn-default btn-sm" do %>
+    <span class="glyphicon glyphicon-menu-down">
+      
+      <%= @link.get_downvotes.size %>
+  <% end %>
